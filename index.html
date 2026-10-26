@@ -336,7 +336,7 @@
             </button>
             <button onclick="handleNavClick('publications')" class="text-left p-3 rounded-md bg-gray-50 hover:bg-blue-50/60 border border-gray-200/70 hover:border-blue-200 transition-all group">
               <div class="text-[11px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-blue-800">Publications &rarr;</div>
-              <div class="font-serif font-semibold text-sm text-blue-900 mt-0.5">18 Peer-Reviewed</div>
+              <div class="font-serif font-semibold text-sm text-blue-900 mt-0.5">18 Publications</div>
               <div class="text-[11px] text-gray-500">Journals &amp; Transactions</div>
             </button>
             <button onclick="handleNavClick('grants')" class="text-left p-3 rounded-md bg-gray-50 hover:bg-blue-50/60 border border-gray-200/70 hover:border-blue-200 transition-all group">
@@ -355,7 +355,7 @@
                   <span>18 ARTICLES</span>
                 </div>
                 <h3 class="font-serif font-semibold text-gray-900 text-sm">
-                  Peer-Reviewed Works in IEEE IoT-J, JBHI, TNSE, TOSN &amp; DCAN
+                  Research Works in IEEE IoT-J, JBHI, TNSE, TOSN &amp; DCAN
                 </h3>
                 <p class="text-xs text-gray-600 mt-1 leading-relaxed">
                   Research articles on blockchain incentive mechanisms, privacy-preserving Transformer inference with MPC, and federated learning security.
@@ -446,60 +446,52 @@
           </div>
         </section>
 
-        <!-- SECTION 03: Publications (CV [1]-[10] + ORCID [11]-[18]) -->
-        <section id="section-publications" class="content-pane hidden scholar-section rounded-lg p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200 pb-4 mb-5 gap-3">
-            <div>
-              <h2 class="font-serif text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">
-                Publications
-              </h2>
-              <p class="text-xs text-gray-500 mt-0.5">
-                Enriched from Academic CV &amp; <a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="text-blue-800 underline">ORCID (0000-0003-1475-333X)</a>
-              </p>
-            </div>
         <!-- SECTION 03: Publications -->
         <section id="section-publications" class="content-pane hidden scholar-section rounded-lg p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-gray-200 pb-3 mb-5 gap-2">
-            <div>
-              <h2 class="font-serif text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">
-                Publications
-              </h2>
-              <p class="text-xs text-gray-500 mt-0.5">
-                Peer-reviewed journal articles (<a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline">ORCID: 0000-0003-1475-333X</a>)
-              </p>
-            </div>
+          <div class="flex items-baseline justify-between border-b border-gray-200 pb-3 mb-5">
+            <h2 class="font-serif text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">
+              Publications
+            </h2>
             <span class="text-xs font-mono text-gray-400">03 / PUBLICATIONS</span>
           </div>
 
-          <!-- Filter Tabs & Keyword Search Input -->
-          <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 mb-6 no-print">
-            <div class="inline-flex flex-wrap gap-1 bg-gray-100 p-1 rounded-lg border border-gray-200">
-              <button onclick="setPubFilter('all')" id="pub-tab-all" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all bg-white text-gray-900 shadow-xs">
-                All Publications (18)
+          <!-- Minimalist Text Filter Tabs & Search Input -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-gray-100 no-print">
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+              <button onclick="setPubFilter('all')" id="pub-tab-all" class="pub-tab-btn font-semibold text-blue-900 underline decoration-2 underline-offset-4">
+                All (18)
               </button>
-              <button onclick="setPubFilter('first')" id="pub-tab-first" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all text-gray-600 hover:text-gray-900">
+              <button onclick="setPubFilter('first')" id="pub-tab-first" class="pub-tab-btn text-gray-500 hover:text-gray-900 transition-colors">
                 First-Author (5)
               </button>
-              <button onclick="setPubFilter('by-year')" id="pub-tab-by-year" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all text-gray-600 hover:text-gray-900">
-                By Year
+              <button onclick="setPubFilter('2026')" id="pub-tab-2026" class="pub-tab-btn text-gray-500 hover:text-gray-900 transition-colors">
+                2026
+              </button>
+              <button onclick="setPubFilter('2025')" id="pub-tab-2025" class="pub-tab-btn text-gray-500 hover:text-gray-900 transition-colors">
+                2025
+              </button>
+              <button onclick="setPubFilter('2024')" id="pub-tab-2024" class="pub-tab-btn text-gray-500 hover:text-gray-900 transition-colors">
+                2024
+              </button>
+              <button onclick="setPubFilter('2022-2023')" id="pub-tab-2022-2023" class="pub-tab-btn text-gray-500 hover:text-gray-900 transition-colors">
+                2022–2023
               </button>
             </div>
 
-            <!-- Search Input -->
-            <div class="relative flex-1 md:max-w-xs">
-              <svg class="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <!-- Minimalist Search Input -->
+            <div class="relative w-full sm:w-52">
               <input
                 type="text"
                 id="pub-search-input"
                 oninput="renderPublications()"
-                placeholder="Search title, journal, DOI, year..."
-                class="w-full pl-8 pr-3 py-1.5 text-xs bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-800 text-gray-700 placeholder-gray-400"
+                placeholder="Filter publications..."
+                class="w-full px-2.5 py-1 text-xs bg-gray-50 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-blue-800 text-gray-700 placeholder-gray-400"
               />
             </div>
           </div>
 
-          <!-- Publications List Container -->
-          <div id="publications-container" class="space-y-4"></div>
+          <!-- Single-Column Publications List Container -->
+          <div id="publications-container" class="divide-y divide-gray-100"></div>
         </section>
 
         <!-- SECTION 04: Funded Research Grants & Projects -->
@@ -1052,18 +1044,18 @@
     function highlightAuthor(authorStr) {
       return authorStr.replace(
         /(C\.\s*Zhang|Chi\s+Zhang)/g,
-        '<strong class="font-semibold text-gray-900 underline decoration-blue-800/70 decoration-2 underline-offset-4">$1</strong>'
+        '<strong class="font-semibold text-gray-900">$1</strong>'
       );
     }
 
     function setPubFilter(filter) {
       currentPubFilter = filter;
       document.querySelectorAll('.pub-tab-btn').forEach(btn => {
-        btn.className = "pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all text-gray-600 hover:text-gray-900";
+        btn.className = "pub-tab-btn text-gray-500 hover:text-gray-900 transition-colors";
       });
       const activeBtn = document.getElementById(`pub-tab-${filter}`);
       if (activeBtn) {
-        activeBtn.className = "pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all bg-white text-gray-900 shadow-xs";
+        activeBtn.className = "pub-tab-btn font-semibold text-blue-900 underline decoration-2 underline-offset-4";
       }
       renderPublications();
     }
@@ -1071,57 +1063,37 @@
     function renderSinglePubCard(pub) {
       const doiUrl = pub.doi ? `https://doi.org/${pub.doi}` : null;
       return `
-        <div class="pub-card p-4 rounded-lg border border-gray-200/90 bg-white">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-            <div class="flex flex-wrap items-center gap-1.5">
-              <span class="font-mono text-[11px] font-semibold text-gray-500">[${pub.index}]</span>
-              ${pub.isFirstAuthor ? `<span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-blue-50 text-blue-900 border border-blue-200 rounded">First Author</span>` : ''}
-            </div>
-            <span class="font-mono text-xs text-gray-500">${pub.yearNote}</span>
-          </div>
-
-          <h4 class="font-serif text-[16px] font-semibold text-gray-900 leading-snug">
+        <article class="py-3.5 first:pt-0 last:pb-0">
+          <h4 class="font-serif text-[15.5px] font-medium text-gray-900 leading-snug">
             ${doiUrl ? `
               <a href="${doiUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-blue-800 transition-colors">
-                "${pub.title}"
+                ${pub.title}
               </a>
-            ` : `"${pub.title}"`}
+            ` : `${pub.title}`}
           </h4>
 
-          <p class="text-xs sm:text-[13px] text-gray-600 mt-1 leading-relaxed">
+          <p class="text-[13px] text-gray-600 mt-1 leading-relaxed">
             ${highlightAuthor(pub.authors)}
           </p>
 
-          <div class="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-600">
-            <div>
-              in <em class="font-serif font-medium text-gray-900">${pub.venue}</em>, ${pub.yearNote}, ${pub.details}.
-              ${pub.doi ? `<span class="font-mono text-[11px] text-gray-500 ml-1">DOI: ${pub.doi}</span>` : ''}
-            </div>
-
-            <div class="flex items-center gap-1.5 no-print">
-              ${pub.doi ? `
-                <a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-900 border border-gray-200 transition-colors">
-                  <span>DOI</span>
-                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
-              ` : ''}
-              <button onclick="toggleBibtex('${pub.id}')" class="px-2 py-0.5 rounded text-[11px] font-mono bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-200 transition-colors">
-                BibTeX
-              </button>
-            </div>
+          <div class="text-xs text-gray-500 mt-1 leading-relaxed">
+            <em class="font-serif text-gray-800 text-[13px]">${pub.venue}</em>, ${pub.details}, ${pub.yearNote}.
+            ${pub.doi ? `<a href="${doiUrl}" target="_blank" rel="noopener noreferrer" class="ml-1.5 font-mono text-[11px] text-blue-800 hover:underline no-print">[DOI]</a>` : ''}
+            <button onclick="toggleBibtex('${pub.id}')" class="ml-1.5 font-mono text-[11px] text-gray-500 hover:text-gray-900 hover:underline no-print">[BibTeX]</button>
           </div>
 
-          <!-- BibTeX Drawer -->
-          <div id="bib-${pub.id}" class="hidden mt-3 pt-3 border-t border-gray-200 no-print">
-            <div class="flex items-center justify-between mb-1">
-              <span class="text-[11px] font-mono text-gray-400">BibTeX Citation</span>
-              <button onclick="copyBibtex('${pub.id}')" class="text-[11px] font-medium text-blue-800 hover:underline">
-                Copy BibTeX
-              </button>
+          <div id="bib-${pub.id}" class="hidden mt-2.5 no-print">
+            <div class="bg-gray-50 border border-gray-200 rounded p-2.5">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[10px] font-mono text-gray-400">BibTeX</span>
+                <button onclick="copyBibtex('${pub.id}')" class="text-[11px] font-medium text-blue-800 hover:underline">
+                  Copy
+                </button>
+              </div>
+              <pre class="text-gray-700 text-[11px] font-mono overflow-x-auto leading-relaxed">${pub.bibtex}</pre>
             </div>
-            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-[11px] font-mono overflow-x-auto leading-relaxed">${pub.bibtex}</pre>
           </div>
-        </div>
+        </article>
       `;
     }
 
@@ -1131,6 +1103,11 @@
 
       const filtered = publications.filter(pub => {
         if (currentPubFilter === 'first' && !pub.isFirstAuthor) return false;
+        if (currentPubFilter === '2026' && pub.year !== 2026) return false;
+        if (currentPubFilter === '2025' && pub.year !== 2025) return false;
+        if (currentPubFilter === '2024' && pub.year !== 2024) return false;
+        if (currentPubFilter === '2022-2023' && (pub.year !== 2022 && pub.year !== 2023)) return false;
+
         if (query) {
           const text = `${pub.title} ${pub.authors} ${pub.venue} ${pub.year} ${pub.doi}`.toLowerCase();
           return text.includes(query);
@@ -1140,35 +1117,14 @@
 
       if (filtered.length === 0) {
         container.innerHTML = `
-          <div class="text-center py-8 text-gray-400 text-xs">
-            No publications found matching your search query.
+          <div class="py-6 text-gray-400 text-xs">
+            No publications found matching your filter.
           </div>
         `;
         return;
       }
 
-      if (currentPubFilter === 'by-year') {
-        const years = [...new Set(filtered.map(p => p.year))].sort((a, b) => b - a);
-        let html = '';
-        years.forEach(yr => {
-          const yrPubs = filtered.filter(p => p.year === yr);
-          html += `
-            <div class="space-y-3 pt-2 first:pt-0">
-              <div class="flex items-center gap-3">
-                <h3 class="font-serif text-lg font-semibold text-gray-900">${yr}</h3>
-                <div class="h-px bg-gray-200 flex-1"></div>
-                <span class="text-xs font-mono text-gray-400">${yrPubs.length} ${yrPubs.length === 1 ? 'paper' : 'papers'}</span>
-              </div>
-              <div class="space-y-3">
-                ${yrPubs.map(renderSinglePubCard).join('')}
-              </div>
-            </div>
-          `;
-        });
-        container.innerHTML = html;
-      } else {
-        container.innerHTML = `<div class="space-y-3">${filtered.map(renderSinglePubCard).join('')}</div>`;
-      }
+      container.innerHTML = filtered.map(renderSinglePubCard).join('');
     }
 
     function toggleBibtex(id) {
