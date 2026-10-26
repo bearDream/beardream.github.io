@@ -114,11 +114,9 @@
           <div class="text-[11px] text-gray-500">Yunnan Police College</div>
         </div>
       </div>
-      <div class="flex items-center gap-2">
-        <button onclick="openDeployModal()" class="px-2.5 py-1.5 text-xs font-medium bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md">
-          GitHub.io
-        </button>
-      </div>
+      <a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 text-[11px] font-mono text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-md">
+        ORCID
+      </a>
     </div>
     <!-- Mobile Horizontal Category Bar -->
     <div class="px-4 py-2 bg-gray-50 border-t border-gray-200/80 flex items-center gap-1.5 overflow-x-auto">
@@ -185,9 +183,8 @@
           <div class="no-print">
             <div class="flex items-center justify-between mb-2">
               <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
-                Directory
+                Navigation
               </span>
-              <span class="text-[10px] font-mono text-gray-400 uppercase">Category View</span>
             </div>
 
             <nav class="space-y-1" aria-label="Academic Directory">
@@ -295,38 +292,6 @@
               </li>
             </ul>
           </div>
-
-          <hr class="my-4 border-gray-200 no-print" />
-
-          <!-- 4. Quick Action Buttons -->
-          <div class="space-y-2 no-print">
-            <div class="grid grid-cols-2 gap-2">
-              <button
-                onclick="window.print()"
-                class="flex items-center justify-center gap-1.5 px-2.5 py-2 rounded-md text-xs font-medium bg-slate-900 hover:bg-slate-800 text-white transition-colors"
-                title="Print or Save Academic CV as PDF"
-              >
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span>Print / Save CV</span>
-              </button>
-              <button
-                onclick="exportAllBibtex()"
-                class="flex items-center justify-center gap-1.5 px-2.5 py-2 rounded-md text-xs font-medium bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-200/80 transition-colors"
-                title="Copy all 18 BibTeX entries"
-              >
-                <svg class="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                <span>Export BibTeX</span>
-              </button>
-            </div>
-
-            <button
-              onclick="openDeployModal()"
-              class="w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 transition-colors"
-            >
-              <svg class="w-3.5 h-3.5 text-gray-700" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              <span>GitHub.io Deployment Guide</span>
-            </button>
-          </div>
         </div>
 
       </aside>
@@ -372,7 +337,7 @@
             <button onclick="handleNavClick('publications')" class="text-left p-3 rounded-md bg-gray-50 hover:bg-blue-50/60 border border-gray-200/70 hover:border-blue-200 transition-all group">
               <div class="text-[11px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-blue-800">Publications &rarr;</div>
               <div class="font-serif font-semibold text-sm text-blue-900 mt-0.5">18 Peer-Reviewed</div>
-              <div class="text-[11px] text-gray-500">5 First-Author / 10 Selected</div>
+              <div class="text-[11px] text-gray-500">Journals &amp; Transactions</div>
             </button>
             <button onclick="handleNavClick('grants')" class="text-left p-3 rounded-md bg-gray-50 hover:bg-blue-50/60 border border-gray-200/70 hover:border-blue-200 transition-all group">
               <div class="text-[11px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-blue-800">PI Grants &rarr;</div>
@@ -386,18 +351,18 @@
             <div class="p-4 rounded-lg border border-gray-200 bg-gray-50/50 flex flex-col justify-between">
               <div>
                 <div class="flex items-center justify-between text-xs font-mono text-blue-900 mb-1">
-                  <span>RECENT PUBLICATIONS</span>
-                  <span>18 TOTAL</span>
+                  <span>PUBLICATIONS</span>
+                  <span>18 ARTICLES</span>
                 </div>
                 <h3 class="font-serif font-semibold text-gray-900 text-sm">
-                  Selected Works in IEEE IoT-J, JBHI, TNSE, TOSN &amp; DCAN
+                  Peer-Reviewed Works in IEEE IoT-J, JBHI, TNSE, TOSN &amp; DCAN
                 </h3>
                 <p class="text-xs text-gray-600 mt-1 leading-relaxed">
-                  Explore 10 selected CV papers and 8 additional ORCID-indexed publications with full BibTeX citations and DOI links.
+                  Research articles on blockchain incentive mechanisms, privacy-preserving Transformer inference with MPC, and federated learning security.
                 </p>
               </div>
               <button onclick="handleNavClick('publications')" class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-blue-900 hover:text-blue-700">
-                <span>View All Publications</span>
+                <span>Browse Publications</span>
                 <span>&rarr;</span>
               </button>
             </div>
@@ -492,15 +457,18 @@
                 Enriched from Academic CV &amp; <a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="text-blue-800 underline">ORCID (0000-0003-1475-333X)</a>
               </p>
             </div>
-            <div class="flex items-center gap-2 no-print">
-              <button
-                onclick="exportAllBibtex()"
-                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-200 transition-colors"
-              >
-                <svg class="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                <span>Copy All BibTeX (18)</span>
-              </button>
+        <!-- SECTION 03: Publications -->
+        <section id="section-publications" class="content-pane hidden scholar-section rounded-lg p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-gray-200 pb-3 mb-5 gap-2">
+            <div>
+              <h2 class="font-serif text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">
+                Publications
+              </h2>
+              <p class="text-xs text-gray-500 mt-0.5">
+                Peer-reviewed journal articles (<a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline">ORCID: 0000-0003-1475-333X</a>)
+              </p>
             </div>
+            <span class="text-xs font-mono text-gray-400">03 / PUBLICATIONS</span>
           </div>
 
           <!-- Filter Tabs & Keyword Search Input -->
@@ -508,9 +476,6 @@
             <div class="inline-flex flex-wrap gap-1 bg-gray-100 p-1 rounded-lg border border-gray-200">
               <button onclick="setPubFilter('all')" id="pub-tab-all" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all bg-white text-gray-900 shadow-xs">
                 All Publications (18)
-              </button>
-              <button onclick="setPubFilter('selected')" id="pub-tab-selected" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all text-gray-600 hover:text-gray-900">
-                Selected on CV (10)
               </button>
               <button onclick="setPubFilter('first')" id="pub-tab-first" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all text-gray-600 hover:text-gray-900">
                 First-Author (5)
@@ -671,7 +636,7 @@
         <!-- Minimalist Scholarly Footer -->
         <footer class="pt-4 pb-8 border-t border-gray-200 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            &copy; <span id="footer-year">2026</span> Dr. Chi Zhang. All rights reserved. Designed for GitHub Pages (<code class="font-mono text-gray-700">github.io</code>).
+            &copy; <span id="footer-year">2026</span> Chi Zhang, Ph.D. &middot; Yunnan Police College.
           </div>
           <div class="flex items-center gap-3">
             <a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 underline decoration-gray-300 underline-offset-2">
@@ -694,60 +659,11 @@
     <span id="toast-msg">Copied to clipboard</span>
   </div>
 
-  <!-- GitHub.io Deployment Guide Modal -->
-  <div id="deploy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4 no-print">
-    <div class="bg-white rounded-xl max-w-2xl w-full p-6 sm:p-7 border border-gray-200 shadow-xl max-h-[90vh] overflow-y-auto">
-      <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
-        <div>
-          <h3 class="font-serif text-lg font-semibold text-gray-900">
-            Host on GitHub Pages (<code class="font-mono text-sm text-blue-800">&lt;username&gt;.github.io</code>)
-          </h3>
-          <p class="text-xs text-gray-500 mt-0.5">
-            Single-file, zero-dependency static HTML ready for direct GitHub deployment
-          </p>
-        </div>
-        <button onclick="closeDeployModal()" class="text-gray-400 hover:text-gray-600 p-1">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-
-      <div class="space-y-4 text-xs sm:text-sm text-gray-600 leading-relaxed">
-        <div class="p-3.5 bg-gray-50 rounded-lg border border-gray-200">
-          <p class="font-semibold text-gray-800 mb-1">1. Create a GitHub Pages Repository</p>
-          <p>Sign in to GitHub and create a new <strong>Public</strong> repository named <code class="font-mono bg-white px-1.5 py-0.5 rounded border border-gray-200 text-gray-800">&lt;your-username&gt;.github.io</code>.</p>
-        </div>
-
-        <div class="p-3.5 bg-gray-50 rounded-lg border border-gray-200">
-          <p class="font-semibold text-gray-800 mb-1">2. Upload or Push <code class="font-mono">index.html</code></p>
-          <p class="mb-2">Save this file as <code class="font-mono">index.html</code> in the root directory of your repository and push:</p>
-          <pre class="bg-gray-900 text-gray-100 p-3 rounded-md font-mono text-xs overflow-x-auto">git init
-git add index.html
-git commit -m "Deploy academic homepage for Dr. Chi Zhang"
-git branch -M main
-git remote add origin https://github.com/&lt;your-username&gt;/&lt;your-username&gt;.github.io.git
-git push -u origin main</pre>
-        </div>
-
-        <div class="p-3.5 bg-gray-50 rounded-lg border border-gray-200">
-          <p class="font-semibold text-gray-800 mb-1">3. Access Your Live Academic Homepage</p>
-          <p>GitHub Pages will automatically build and serve your site at <code class="font-mono text-blue-800">https://&lt;your-username&gt;.github.io</code> within 60 seconds.</p>
-        </div>
-      </div>
-
-      <div class="mt-6 pt-4 border-t border-gray-200 flex justify-end">
-        <button onclick="closeDeployModal()" class="px-4 py-2 rounded-md text-xs font-medium bg-gray-900 text-white hover:bg-gray-800 transition-colors">
-          Close Guide
-        </button>
-      </div>
-    </div>
-  </div>
-
   <!-- ===================================================================== -->
   <!-- APPLICATION LOGIC: 18 Publications + Split-Column Navigation Engine   -->
   <!-- ===================================================================== -->
   <script>
     const publications = [
-      // ---------------- Selected CV Papers [1] - [10] ----------------
       {
         index: 1,
         id: "zhang2023iotj",
@@ -755,12 +671,10 @@ git push -u origin main</pre>
         title: "Toward Secure Data Sharing for the IoT Devices With Limited Resources: A Smart Contract-Based Quality-Driven Incentive Mechanism",
         venue: "IEEE Internet of Things Journal",
         year: 2023,
-        yearNote: "2023 (Early Access 2022)",
+        yearNote: "2023",
         details: "vol. 10, no. 14, pp. 12012–12024",
         doi: "10.1109/JIOT.2022.3142786",
         isFirstAuthor: true,
-        isSelectedCV: true,
-        badge: "Selected CV [1]",
         bibtex: `@article{zhang2023toward,
   author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua},
   title   = {Toward Secure Data Sharing for the IoT Devices With Limited Resources: A Smart Contract-Based Quality-Driven Incentive Mechanism},
@@ -783,8 +697,6 @@ git push -u origin main</pre>
         details: "vol. 12, no. 1, pp. 86–100",
         doi: "10.1016/j.dcan.2025.03.005",
         isFirstAuthor: true,
-        isSelectedCV: true,
-        badge: "Selected CV [2]",
         bibtex: `@article{zhang2026secformer,
   author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua and Zeng, Kai and Zhang, Xiaohui and Cao, Bin},
   title   = {Secformer: Privacy-preserving Atomic-Level Componentized Transformer-Like Model with MPC},
@@ -807,8 +719,6 @@ git push -u origin main</pre>
         details: "vol. 30, no. 2, pp. 865–878",
         doi: "10.1109/JBHI.2025.3592045",
         isFirstAuthor: true,
-        isSelectedCV: true,
-        badge: "Selected CV [3]",
         bibtex: `@article{zhang2026efficient,
   author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua and Zhang, Xiaohui and Zhao, Ziyuan},
   title   = {Efficient Collaborative Model Training Mechanism with Privacy-preserving Data for the IoMT},
@@ -831,8 +741,6 @@ git push -u origin main</pre>
         details: "art. no. 100436",
         doi: "10.1016/j.bcra.2025.100436",
         isFirstAuthor: true,
-        isSelectedCV: true,
-        badge: "Selected CV [4]",
         bibtex: `@article{zhang2025chainbridge,
   author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua and Zhang, Xiaohui},
   title   = {Chain Bridge: Cross-chain Anonymous Authentication and Interoperability Mechanism},
@@ -853,8 +761,6 @@ git push -u origin main</pre>
         details: "vol. 20, no. 2, pp. 1–22",
         doi: "10.1145/3638765",
         isFirstAuthor: false,
-        isSelectedCV: true,
-        badge: "Selected CV [5]",
         bibtex: `@article{tian2024vssb,
   author  = {Tian, Siben and Bai, Fenhua and Shen, Tao and Zhang, Chi and Gong, Bei},
   title   = {Vssb-raft: A Secure and Efficient Zero Trust Consensus Algorithm for Blockchain},
@@ -877,8 +783,6 @@ git push -u origin main</pre>
         details: "vol. 13, pp. 4524–4541",
         doi: "10.1109/TNSE.2025.3541289",
         isFirstAuthor: false,
-        isSelectedCV: true,
-        badge: "Selected CV [6]",
         bibtex: `@article{zhang2025knowledge,
   author  = {Zhang, Xiaohui and Shen, Tao and Zeng, Kai and Zhang, Chi and Bai, Fenhua},
   title   = {Knowledge-Centric Split Federated Learning With Partial Client Participation for Non-IID Data},
@@ -900,8 +804,6 @@ git push -u origin main</pre>
         details: "vol. 37, no. 6, pp. 50–57",
         doi: "10.1109/MNET.134.2200559",
         isFirstAuthor: false,
-        isSelectedCV: true,
-        badge: "Selected CV [7]",
         bibtex: `@article{zhang2023collusion,
   author  = {Zhang, Xiaohui and Shen, Tao and Bai, Fenhua and Zhang, Chi},
   title   = {Collusion-Based Poisoning Attacks Against Blockchained Federated Learning},
@@ -924,8 +826,6 @@ git push -u origin main</pre>
         details: "vol. 148, art. no. 104158",
         doi: "10.1016/j.cose.2024.104158",
         isFirstAuthor: false,
-        isSelectedCV: true,
-        badge: "Selected CV [8]",
         bibtex: `@article{bai2025zksa,
   author  = {Bai, Fenhua and Wang, Zikang and Zeng, Kai and Zhang, Chi and Shen, Tao},
   title   = {ZKSA: Secure Mutual Attestation Against TOCTOU Zero-Knowledge Proof Based for IoT Devices},
@@ -947,8 +847,6 @@ git push -u origin main</pre>
         details: "vol. 80, no. 14, pp. 21533–21560",
         doi: "10.1007/s11227-024-06275-7",
         isFirstAuthor: false,
-        isSelectedCV: true,
-        badge: "Selected CV [9]",
         bibtex: `@article{bai2024rabft,
   author  = {Bai, Fenhua and Li, Fushuang and Shen, Tao and Zhang, Chi},
   title   = {RaBFT: An Improved Byzantine Fault Tolerance Consensus Algorithm Based on Raft},
@@ -971,8 +869,6 @@ git push -u origin main</pre>
         details: "vol. 27, no. 3, pp. 3481–3498",
         doi: "10.1007/s10586-023-04151-2",
         isFirstAuthor: false,
-        isSelectedCV: true,
-        badge: "Selected CV [10]",
         bibtex: `@article{shen2024sekad,
   author  = {Shen, Tao and Sun, Qianqi and Zhang, Chi and Bai, Fenhua},
   title   = {SEKad: A Scalable Protocol for Blockchain Networks with Enhanced Broadcast Efficiency},
@@ -984,8 +880,6 @@ git push -u origin main</pre>
   doi     = {10.1007/s10586-023-04151-2}
 }`
       },
-
-      // ---------------- Additional ORCID-Indexed Papers [11] - [18] ----------------
       {
         index: 11,
         id: "zhang2026electronics",
@@ -997,8 +891,6 @@ git push -u origin main</pre>
         details: "vol. 15, no. 4, art. no. 812",
         doi: "10.3390/electronics15020275",
         isFirstAuthor: true,
-        isSelectedCV: false,
-        badge: "ORCID [11]",
         bibtex: `@article{zhang2026communication,
   author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua},
   title   = {Communication-Efficient Homomorphically Encrypted Deep Network Inference via Adaptive Feature Compression},
@@ -1020,8 +912,6 @@ git push -u origin main</pre>
         details: "vol. 265, art. no. 125982",
         doi: "",
         isFirstAuthor: false,
-        isSelectedCV: false,
-        badge: "ORCID [12]",
         bibtex: `@article{shen2025dynamic,
   author  = {Shen, Tao and Wang, J. and Zhang, Chi},
   title   = {Dynamic Incentive Mechanism for Cross-Silo Federated Learning Based on Evolutionary Game Theory},
@@ -1042,8 +932,6 @@ git push -u origin main</pre>
         details: "vol. 74, no. 5, pp. 7812–7825",
         doi: "",
         isFirstAuthor: false,
-        isSelectedCV: false,
-        badge: "ORCID [13]",
         bibtex: `@article{zeng2025privacy,
   author  = {Zeng, Kai and Shen, Tao and Zhang, Chi},
   title   = {Privacy-Preserving Asynchronous Federated Learning for Edge Intelligence in Vehicular Networks},
@@ -1065,8 +953,6 @@ git push -u origin main</pre>
         details: "vol. 12, no. 8, pp. 10421–10434",
         doi: "",
         isFirstAuthor: false,
-        isSelectedCV: false,
-        badge: "ORCID [14]",
         bibtex: `@article{bai2025lightweight,
   author  = {Bai, Fenhua and Shen, Tao and Zhang, Chi},
   title   = {Lightweight Verifiable Query Processing for Blockchain-Assisted Industrial Internet of Things},
@@ -1088,8 +974,6 @@ git push -u origin main</pre>
         details: "vol. 678, art. no. 120945",
         doi: "",
         isFirstAuthor: false,
-        isSelectedCV: false,
-        badge: "ORCID [15]",
         bibtex: `@article{zhang2024byzantine,
   author  = {Zhang, Xiaohui and Shen, Tao and Zhang, Chi},
   title   = {Byzantine-Resilient Aggregation with Zero-Knowledge Verification in Decentralized Learning},
@@ -1110,8 +994,6 @@ git push -u origin main</pre>
         details: "vol. 166, art. no. 103672",
         doi: "",
         isFirstAuthor: false,
-        isSelectedCV: false,
-        badge: "ORCID [16]",
         bibtex: `@article{liu2025crossdomain,
   author  = {Liu, Y. and Shen, Tao and Zhang, Chi},
   title   = {Cross-Domain Trust Evaluation and Access Control for Low-Altitude UAV Swarm Networks},
@@ -1132,8 +1014,6 @@ git push -u origin main</pre>
         details: "vol. 251, art. no. 110618",
         doi: "",
         isFirstAuthor: false,
-        isSelectedCV: false,
-        badge: "ORCID [17]",
         bibtex: `@article{chen2024verifiable,
   author  = {Chen, J. and Shen, Tao and Zhang, Chi},
   title   = {Verifiable Multi-Party Secret Sharing with Dynamic Threshold Adjustment in Distributed Ledgers},
@@ -1154,8 +1034,6 @@ git push -u origin main</pre>
         details: "vol. 149, pp. 312–325",
         doi: "",
         isFirstAuthor: false,
-        isSelectedCV: false,
-        badge: "ORCID [18]",
         bibtex: `@article{wang2023fair,
   author  = {Wang, H. and Shen, Tao and Bai, Fenhua and Zhang, Chi},
   title   = {Fair Data Trading Protocol Based on Smart Contracts and Oblivious Transfer},
@@ -1191,25 +1069,23 @@ git push -u origin main</pre>
     }
 
     function renderSinglePubCard(pub) {
-      const doiUrl = pub.doi ? `https://doi.org/${pub.doi}` : `https://orcid.org/0000-0003-1475-333X`;
+      const doiUrl = pub.doi ? `https://doi.org/${pub.doi}` : null;
       return `
         <div class="pub-card p-4 rounded-lg border border-gray-200/90 bg-white">
           <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
             <div class="flex flex-wrap items-center gap-1.5">
               <span class="font-mono text-[11px] font-semibold text-gray-500">[${pub.index}]</span>
               ${pub.isFirstAuthor ? `<span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-blue-50 text-blue-900 border border-blue-200 rounded">First Author</span>` : ''}
-              ${pub.isSelectedCV
-                ? `<span class="px-2 py-0.5 text-[10px] font-medium bg-gray-100 text-gray-700 border border-gray-200 rounded">Selected on CV</span>`
-                : `<span class="px-2 py-0.5 text-[10px] font-medium bg-emerald-50/80 text-emerald-800 border border-emerald-200/80 rounded">ORCID Indexed</span>`
-              }
             </div>
             <span class="font-mono text-xs text-gray-500">${pub.yearNote}</span>
           </div>
 
           <h4 class="font-serif text-[16px] font-semibold text-gray-900 leading-snug">
-            <a href="${doiUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-blue-800 transition-colors">
-              "${pub.title}"
-            </a>
+            ${doiUrl ? `
+              <a href="${doiUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-blue-800 transition-colors">
+                "${pub.title}"
+              </a>
+            ` : `"${pub.title}"`}
           </h4>
 
           <p class="text-xs sm:text-[13px] text-gray-600 mt-1 leading-relaxed">
@@ -1228,11 +1104,7 @@ git push -u origin main</pre>
                   <span>DOI</span>
                   <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
-              ` : `
-                <a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono bg-gray-100 hover:bg-emerald-50 text-gray-700 hover:text-emerald-900 border border-gray-200 transition-colors">
-                  <span>ORCID</span>
-                </a>
-              `}
+              ` : ''}
               <button onclick="toggleBibtex('${pub.id}')" class="px-2 py-0.5 rounded text-[11px] font-mono bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-200 transition-colors">
                 BibTeX
               </button>
@@ -1242,7 +1114,7 @@ git push -u origin main</pre>
           <!-- BibTeX Drawer -->
           <div id="bib-${pub.id}" class="hidden mt-3 pt-3 border-t border-gray-200 no-print">
             <div class="flex items-center justify-between mb-1">
-              <span class="text-[11px] font-mono text-gray-400">BibTeX Citation Record</span>
+              <span class="text-[11px] font-mono text-gray-400">BibTeX Citation</span>
               <button onclick="copyBibtex('${pub.id}')" class="text-[11px] font-medium text-blue-800 hover:underline">
                 Copy BibTeX
               </button>
@@ -1258,7 +1130,6 @@ git push -u origin main</pre>
       const query = (document.getElementById('pub-search-input')?.value || '').toLowerCase().trim();
 
       const filtered = publications.filter(pub => {
-        if (currentPubFilter === 'selected' && !pub.isSelectedCV) return false;
         if (currentPubFilter === 'first' && !pub.isFirstAuthor) return false;
         if (query) {
           const text = `${pub.title} ${pub.authors} ${pub.venue} ${pub.year} ${pub.doi}`.toLowerCase();
@@ -1270,7 +1141,7 @@ git push -u origin main</pre>
       if (filtered.length === 0) {
         container.innerHTML = `
           <div class="text-center py-8 text-gray-400 text-xs">
-            No publications found matching your filter criteria.
+            No publications found matching your search query.
           </div>
         `;
         return;
@@ -1308,11 +1179,6 @@ git push -u origin main</pre>
     function copyBibtex(id) {
       const pub = publications.find(p => p.id === id);
       if (pub) copyText(pub.bibtex, `Copied BibTeX for [${pub.index}]`);
-    }
-
-    function exportAllBibtex() {
-      const all = publications.map(p => p.bibtex).join('\n\n');
-      copyText(all, 'All 18 BibTeX records copied to clipboard');
     }
 
     // Left-Sidebar Fixed Category Tab Isolation Engine
@@ -1375,18 +1241,6 @@ git push -u origin main</pre>
         toast.classList.add('hidden');
         toast.classList.remove('flex');
       }, 2500);
-    }
-
-    function openDeployModal() {
-      const modal = document.getElementById('deploy-modal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-
-    function closeDeployModal() {
-      const modal = document.getElementById('deploy-modal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
     }
 
     window.addEventListener('DOMContentLoaded', () => {
