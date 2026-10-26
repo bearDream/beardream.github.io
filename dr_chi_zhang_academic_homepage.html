@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi Zhang, Ph.D. | Academic Homepage</title>
+  <meta name="description" content="Academic homepage of Dr. Chi Zhang (ORCID: 0000-0003-1475-333X), Faculty Researcher at Yunnan Police College. Research in Blockchain, Trustworthy Data Sharing, Privacy-Preserving Computation, and MPC." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Newsreader (Academic Serif), Inter (Clean Sans), JetBrains Mono (Monospace Metadata) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Newsreader"', 'Georgia', 'Cambria', 'serif'],
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            scholar: {
+              bg: '#FAFAFA',
+              surface: '#FFFFFF',
+              ink: '#111827',
+              body: '#374151',
+              muted: '#6B7280',
+              border: '#E5E7EB',
+              navy: '#1E3A8A',
+              accent: '#1D4ED8',
+              orcid: '#A6CE39'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAFAFA;
+      color: #1F2937;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Subtle academic section divider */
+    .scholar-section {
+      background-color: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+    }
+    /* Left sidebar nav item active state */
+    .sidebar-nav-btn.active {
+      background-color: #EFF6FF;
+      color: #1E3A8A;
+      border-left-color: #1E3A8A;
+      font-weight: 600;
+    }
+    .sidebar-nav-btn {
+      border-left: 3px solid transparent;
+    }
+    /* Publication item hover */
+    .pub-card {
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .pub-card:hover {
+      background-color: #F9FAFB;
+      border-color: #D1D5DB;
+    }
+    /* Custom scrollbar for BibTeX drawer */
+    pre::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    pre::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 3px;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #FFFFFF;
+      }
+      .content-pane {
+        display: block !important;
+      }
+      .scholar-section {
+        border: none;
+        box-shadow: none;
+        padding: 0 !important;
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans selection:bg-blue-100 selection:text-blue-950">
+
+  <!-- Mobile Top Header & Category Drawer Trigger (Visible only below lg breakpoint) -->
+  <header class="lg:hidden sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-200 no-print">
+    <div class="max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-slate-900 text-white font-serif text-sm font-semibold flex items-center justify-center">
+          CZ
+        </div>
+        <div>
+          <div class="font-serif font-semibold text-gray-900 text-base leading-tight">Chi Zhang, Ph.D.</div>
+          <div class="text-[11px] text-gray-500">Yunnan Police College</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="openDeployModal()" class="px-2.5 py-1.5 text-xs font-medium bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md">
+          GitHub.io
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Horizontal Category Bar -->
+    <div class="px-4 py-2 bg-gray-50 border-t border-gray-200/80 flex items-center gap-1.5 overflow-x-auto">
+      <button onclick="handleNavClick('overview')" data-section="overview" class="mobile-nav-btn shrink-0 px-2.5 py-1 rounded text-xs font-medium bg-blue-900 text-white">
+        Overview
+      </button>
+      <button onclick="handleNavClick('interests')" data-section="interests" class="mobile-nav-btn shrink-0 px-2.5 py-1 rounded text-xs font-medium text-gray-600 hover:bg-gray-200/70">
+        Research Interests
+      </button>
+      <button onclick="handleNavClick('publications')" data-section="publications" class="mobile-nav-btn shrink-0 px-2.5 py-1 rounded text-xs font-medium text-gray-600 hover:bg-gray-200/70">
+        Publications (18)
+      </button>
+      <button onclick="handleNavClick('grants')" data-section="grants" class="mobile-nav-btn shrink-0 px-2.5 py-1 rounded text-xs font-medium text-gray-600 hover:bg-gray-200/70">
+        Grants (2)
+      </button>
+      <button onclick="handleNavClick('experience')" data-section="experience" class="mobile-nav-btn shrink-0 px-2.5 py-1 rounded text-xs font-medium text-gray-600 hover:bg-gray-200/70">
+        Experience
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Desktop Split-Column Container (max-width: 1200px) -->
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12">
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
+
+      <!-- ===================================================================== -->
+      <!-- LEFT COLUMN: Sticky Scholar Sidebar (~300px wide on Desktop)          -->
+      <!-- ===================================================================== -->
+      <aside class="w-full lg:w-[300px] shrink-0 lg:sticky lg:top-8 space-y-5">
+
+        <!-- 1. Profile Identity Card -->
+        <div class="scholar-section rounded-lg p-6">
+          <div class="flex flex-row lg:flex-col items-center lg:items-start gap-4">
+            <!-- Academic Avatar / Monogram Placeholder -->
+            <div class="relative shrink-0">
+              <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-gradient-to-br from-slate-800 to-slate-950 text-white flex flex-col items-center justify-center border-2 border-gray-200 shadow-sm">
+                <span class="font-serif text-2xl lg:text-3xl font-medium tracking-wider">CZ</span>
+              </div>
+              <span class="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 ring-2 ring-white" title="Active Researcher"></span>
+            </div>
+
+            <!-- Name, Title & Affiliation -->
+            <div>
+              <div class="flex items-baseline gap-2 flex-wrap">
+                <h1 class="font-serif text-2xl font-semibold text-gray-900 tracking-tight">
+                  Chi Zhang, Ph.D.
+                </h1>
+              </div>
+              <p class="text-xs font-semibold text-blue-900 mt-1">
+                Faculty Member / Researcher
+              </p>
+              <p class="text-xs text-gray-600 mt-0.5 leading-snug">
+                Yunnan Police College
+              </p>
+              <p class="text-[11px] text-gray-500 mt-1 leading-snug">
+                Ph.D., Kunming University of Science and Technology
+              </p>
+            </div>
+          </div>
+
+          <hr class="my-4 border-gray-200" />
+
+          <!-- 2. Section Directory / Category Navigation Menu -->
+          <div class="no-print">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
+                Directory
+              </span>
+              <span class="text-[10px] font-mono text-gray-400 uppercase">Category View</span>
+            </div>
+
+            <nav class="space-y-1" aria-label="Academic Directory">
+              <button
+                onclick="handleNavClick('overview')"
+                data-section="overview"
+                class="sidebar-nav-btn active w-full flex items-center justify-between px-3 py-2 rounded-r-md text-xs text-gray-700 hover:bg-gray-50 transition-all text-left"
+              >
+                <span class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                  <span>Overview &amp; Biography</span>
+                </span>
+                <span class="text-[10px] text-gray-400 font-mono">01</span>
+              </button>
+
+              <button
+                onclick="handleNavClick('interests')"
+                data-section="interests"
+                class="sidebar-nav-btn w-full flex items-center justify-between px-3 py-2 rounded-r-md text-xs text-gray-700 hover:bg-gray-50 transition-all text-left"
+              >
+                <span class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                  <span>Research Interests</span>
+                </span>
+                <span class="text-[10px] text-gray-400 font-mono">02</span>
+              </button>
+
+              <button
+                onclick="handleNavClick('publications')"
+                data-section="publications"
+                class="sidebar-nav-btn w-full flex items-center justify-between px-3 py-2 rounded-r-md text-xs text-gray-700 hover:bg-gray-50 transition-all text-left"
+              >
+                <span class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                  <span>Publications</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[10px] font-mono font-semibold bg-gray-100 text-gray-700 rounded">18</span>
+              </button>
+
+              <button
+                onclick="handleNavClick('grants')"
+                data-section="grants"
+                class="sidebar-nav-btn w-full flex items-center justify-between px-3 py-2 rounded-r-md text-xs text-gray-700 hover:bg-gray-50 transition-all text-left"
+              >
+                <span class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                  <span>Funded Grants &amp; Projects</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[10px] font-mono font-semibold bg-gray-100 text-gray-700 rounded">2</span>
+              </button>
+
+              <button
+                onclick="handleNavClick('experience')"
+                data-section="experience"
+                class="sidebar-nav-btn w-full flex items-center justify-between px-3 py-2 rounded-r-md text-xs text-gray-700 hover:bg-gray-50 transition-all text-left"
+              >
+                <span class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                  <span>Academic Experience</span>
+                </span>
+                <span class="text-[10px] text-gray-400 font-mono">05</span>
+              </button>
+            </nav>
+          </div>
+
+          <hr class="my-4 border-gray-200 no-print" />
+
+          <!-- 3. Academic & Contact Links -->
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-gray-400 block mb-2.5">
+              Academic &amp; Contact
+            </span>
+            <ul class="space-y-2.5 text-xs text-gray-600">
+              <!-- Email + Copy -->
+              <li class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2 min-w-0">
+                  <svg class="w-3.5 h-3.5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  <a href="mailto:laxzhang@outlook.com" class="font-mono text-[11px] text-gray-700 hover:text-blue-800 truncate underline decoration-gray-300 underline-offset-2">
+                    laxzhang@outlook.com
+                  </a>
+                </div>
+                <button
+                  onclick="copyText('laxzhang@outlook.com', 'Email address copied to clipboard')"
+                  class="px-1.5 py-0.5 text-[10px] font-medium bg-gray-100 hover:bg-gray-200 text-gray-700 rounded transition-colors shrink-0 no-print"
+                >
+                  Copy
+                </button>
+              </li>
+
+              <!-- ORCID -->
+              <li class="flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 text-[#A6CE39] shrink-0" viewBox="0 0 256 256" fill="currentColor">
+                  <path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/>
+                  <path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4zM78.6 66.8c-5.7 0-10.3-4.6-10.3-10.3s4.6-10.3 10.3-10.3 10.3 4.6 10.3 10.3-4.6 10.3-10.3 10.3z"/>
+                </svg>
+                <a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] text-gray-700 hover:text-blue-800 underline decoration-gray-300 underline-offset-2">
+                  0000-0003-1475-333X
+                </a>
+              </li>
+
+              <!-- Location -->
+              <li class="flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>Kunming, Yunnan, China</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr class="my-4 border-gray-200 no-print" />
+
+          <!-- 4. Quick Action Buttons -->
+          <div class="space-y-2 no-print">
+            <div class="grid grid-cols-2 gap-2">
+              <button
+                onclick="window.print()"
+                class="flex items-center justify-center gap-1.5 px-2.5 py-2 rounded-md text-xs font-medium bg-slate-900 hover:bg-slate-800 text-white transition-colors"
+                title="Print or Save Academic CV as PDF"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Print / Save CV</span>
+              </button>
+              <button
+                onclick="exportAllBibtex()"
+                class="flex items-center justify-center gap-1.5 px-2.5 py-2 rounded-md text-xs font-medium bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-200/80 transition-colors"
+                title="Copy all 18 BibTeX entries"
+              >
+                <svg class="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span>Export BibTeX</span>
+              </button>
+            </div>
+
+            <button
+              onclick="openDeployModal()"
+              class="w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 transition-colors"
+            >
+              <svg class="w-3.5 h-3.5 text-gray-700" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>GitHub.io Deployment Guide</span>
+            </button>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- ===================================================================== -->
+      <!-- RIGHT COLUMN: Main Scholarly Content Area (~820px flexible width)     -->
+      <!-- ===================================================================== -->
+      <main class="flex-1 min-w-0 w-full space-y-8">
+
+        <!-- SECTION 01: Overview & Biography -->
+        <section id="section-overview" class="content-pane scholar-section rounded-lg p-6 sm:p-8">
+          <div class="flex items-baseline justify-between border-b border-gray-200 pb-3 mb-5">
+            <h2 class="font-serif text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">
+              Overview &amp; Biography
+            </h2>
+            <span class="text-xs font-mono text-gray-400">01 / BIOGRAPHY</span>
+          </div>
+
+          <div class="space-y-4 text-gray-700 text-[15px] leading-relaxed">
+            <p>
+              <strong>Dr. Chi Zhang</strong> is currently a Faculty Member / Researcher at <strong>Yunnan Police College</strong> (since August 2025), Kunming, China. He received his Ph.D. degree in Computer Science and Technology (with an integrated Master degree in Software Engineering) from <strong>Kunming University of Science and Technology (KUST)</strong> in June 2025.
+            </p>
+            <p>
+              My research focuses on <strong>blockchain-enabled trustworthy data sharing</strong>, <strong>privacy-preserving computation</strong>, and <strong>collaborative intelligence</strong> in distributed and multi-party environments. My work investigates how blockchain and distributed ledger technologies can support decentralized trust, data integrity, accountability, and secure data exchange among heterogeneous and potentially untrusted participants.
+            </p>
+            <p>
+              I integrate <em>blockchain</em>, <em>game theory</em>, <em>multi-party computation (MPC)</em>, and <em>collaborative computing</em> to address challenges in trust establishment, incentive mechanisms, privacy preservation, and secure multi-party collaboration. These research interests provide a foundation for trustworthy data and intelligence sharing across organizational boundaries, with applications in <strong>IoT</strong>, <strong>edge intelligence</strong>, <strong>public safety</strong>, <strong>intelligent transportation</strong>, and <strong>emerging low-altitude ecosystems</strong>.
+            </p>
+          </div>
+
+          <!-- Key Academic Highlights Strip (Interactive Quick-Jump Cards) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-5 border-t border-gray-100">
+            <button onclick="handleNavClick('experience')" class="text-left p-3 rounded-md bg-gray-50 hover:bg-blue-50/60 border border-gray-200/70 hover:border-blue-200 transition-all group">
+              <div class="text-[11px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-blue-800">Affiliation &rarr;</div>
+              <div class="font-serif font-semibold text-sm text-gray-900 mt-0.5">Yunnan Police College</div>
+              <div class="text-[11px] text-gray-500">Aug. 2025 – Present</div>
+            </button>
+            <button onclick="handleNavClick('experience')" class="text-left p-3 rounded-md bg-gray-50 hover:bg-blue-50/60 border border-gray-200/70 hover:border-blue-200 transition-all group">
+              <div class="text-[11px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-blue-800">Doctorate &rarr;</div>
+              <div class="font-serif font-semibold text-sm text-gray-900 mt-0.5">Ph.D. in CS &amp; Tech</div>
+              <div class="text-[11px] text-gray-500">KUST (2019 – 2025)</div>
+            </button>
+            <button onclick="handleNavClick('publications')" class="text-left p-3 rounded-md bg-gray-50 hover:bg-blue-50/60 border border-gray-200/70 hover:border-blue-200 transition-all group">
+              <div class="text-[11px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-blue-800">Publications &rarr;</div>
+              <div class="font-serif font-semibold text-sm text-blue-900 mt-0.5">18 Peer-Reviewed</div>
+              <div class="text-[11px] text-gray-500">5 First-Author / 10 Selected</div>
+            </button>
+            <button onclick="handleNavClick('grants')" class="text-left p-3 rounded-md bg-gray-50 hover:bg-blue-50/60 border border-gray-200/70 hover:border-blue-200 transition-all group">
+              <div class="text-[11px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-blue-800">PI Grants &rarr;</div>
+              <div class="font-serif font-semibold text-sm text-gray-900 mt-0.5">2 Ongoing Grants</div>
+              <div class="text-[11px] text-gray-500">2026 – 2028 (Principal Investigator)</div>
+            </button>
+          </div>
+
+          <!-- Quick Preview Cards on Overview Tab -->
+          <div class="mt-6 pt-5 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-4 no-print">
+            <div class="p-4 rounded-lg border border-gray-200 bg-gray-50/50 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs font-mono text-blue-900 mb-1">
+                  <span>RECENT PUBLICATIONS</span>
+                  <span>18 TOTAL</span>
+                </div>
+                <h3 class="font-serif font-semibold text-gray-900 text-sm">
+                  Selected Works in IEEE IoT-J, JBHI, TNSE, TOSN &amp; DCAN
+                </h3>
+                <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                  Explore 10 selected CV papers and 8 additional ORCID-indexed publications with full BibTeX citations and DOI links.
+                </p>
+              </div>
+              <button onclick="handleNavClick('publications')" class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-blue-900 hover:text-blue-700">
+                <span>View All Publications</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+
+            <div class="p-4 rounded-lg border border-gray-200 bg-gray-50/50 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs font-mono text-blue-900 mb-1">
+                  <span>FUNDED RESEARCH GRANTS</span>
+                  <span>2 ONGOING (PI)</span>
+                </div>
+                <h3 class="font-serif font-semibold text-gray-900 text-sm">
+                  Principal Investigator Grants (2026–2028)
+                </h3>
+                <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+                  Leading projects supported by the Department of Education of Yunnan Province (2026J0800) and the Yunnan Key Laboratory of Smart Anti-Narcotics (ZHJDNB-2025010).
+                </p>
+              </div>
+              <button onclick="handleNavClick('grants')" class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-blue-900 hover:text-blue-700">
+                <span>View Funded Grants &amp; Projects</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 02: Research Interests -->
+        <section id="section-interests" class="content-pane hidden scholar-section rounded-lg p-6 sm:p-8">
+          <div class="flex items-baseline justify-between border-b border-gray-200 pb-3 mb-5">
+            <h2 class="font-serif text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">
+              Research Interests &amp; Keywords
+            </h2>
+            <span class="text-xs font-mono text-gray-400">02 / RESEARCH FOCUS</span>
+          </div>
+
+          <!-- Core Keywords Badges -->
+          <div class="mb-6">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2.5">
+              Core Keywords
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 text-xs font-medium bg-blue-50/80 text-blue-900 rounded-md border border-blue-200/80">Blockchain</span>
+              <span class="px-3 py-1 text-xs font-medium bg-blue-50/80 text-blue-900 rounded-md border border-blue-200/80">Trustworthy Data Sharing</span>
+              <span class="px-3 py-1 text-xs font-medium bg-blue-50/80 text-blue-900 rounded-md border border-blue-200/80">Privacy-Preserving Computation</span>
+              <span class="px-3 py-1 text-xs font-medium bg-blue-50/80 text-blue-900 rounded-md border border-blue-200/80">Multi-Party Computation (MPC)</span>
+              <span class="px-3 py-1 text-xs font-medium bg-blue-50/80 text-blue-900 rounded-md border border-blue-200/80">Collaborative Intelligence</span>
+              <span class="px-3 py-1 text-xs font-medium bg-blue-50/80 text-blue-900 rounded-md border border-blue-200/80">Public Safety</span>
+            </div>
+          </div>
+
+          <!-- Three Research Pillars -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-4 rounded-lg bg-gray-50/80 border border-gray-200/80">
+              <div class="font-mono text-[11px] text-blue-800 font-semibold mb-1">THRUST I</div>
+              <h4 class="font-serif font-semibold text-base text-gray-900 mb-1.5">
+                Blockchain &amp; Trustworthy Data Sharing
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Decentralized trust establishment, smart contract quality-driven incentive mechanisms, cross-chain anonymous authentication (<em>Chain Bridge</em>), and zero-trust/Byzantine fault-tolerant consensus protocols (<em>Vssb-raft</em>, <em>RaBFT</em>, <em>SEKad</em>).
+              </p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-gray-50/80 border border-gray-200/80">
+              <div class="font-mono text-[11px] text-blue-800 font-semibold mb-1">THRUST II</div>
+              <h4 class="font-serif font-semibold text-base text-gray-900 mb-1.5">
+                Privacy-Preserving Computation &amp; MPC
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Atomic-level componentized Transformer inference with secure Multi-Party Computation (<em>Secformer</em>), homomorphically encrypted deep network inference, zero-knowledge mutual attestation (<em>ZKSA</em>), and probabilistic representations.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-gray-50/80 border border-gray-200/80">
+              <div class="font-mono text-[11px] text-blue-800 font-semibold mb-1">THRUST III</div>
+              <h4 class="font-serif font-semibold text-base text-gray-900 mb-1.5">
+                Collaborative Intelligence &amp; Public Safety
+              </h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Privacy-preserving collaborative model training for IoMT, knowledge-centric split &amp; blockchained federated learning, collusion-based poisoning defense, and implicit association mining for smart anti-narcotics and low-altitude ecosystems.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 03: Publications (CV [1]-[10] + ORCID [11]-[18]) -->
+        <section id="section-publications" class="content-pane hidden scholar-section rounded-lg p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200 pb-4 mb-5 gap-3">
+            <div>
+              <h2 class="font-serif text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">
+                Publications
+              </h2>
+              <p class="text-xs text-gray-500 mt-0.5">
+                Enriched from Academic CV &amp; <a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="text-blue-800 underline">ORCID (0000-0003-1475-333X)</a>
+              </p>
+            </div>
+            <div class="flex items-center gap-2 no-print">
+              <button
+                onclick="exportAllBibtex()"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-200 transition-colors"
+              >
+                <svg class="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span>Copy All BibTeX (18)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter Tabs & Keyword Search Input -->
+          <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 mb-6 no-print">
+            <div class="inline-flex flex-wrap gap-1 bg-gray-100 p-1 rounded-lg border border-gray-200">
+              <button onclick="setPubFilter('all')" id="pub-tab-all" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all bg-white text-gray-900 shadow-xs">
+                All Publications (18)
+              </button>
+              <button onclick="setPubFilter('selected')" id="pub-tab-selected" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all text-gray-600 hover:text-gray-900">
+                Selected on CV (10)
+              </button>
+              <button onclick="setPubFilter('first')" id="pub-tab-first" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all text-gray-600 hover:text-gray-900">
+                First-Author (5)
+              </button>
+              <button onclick="setPubFilter('by-year')" id="pub-tab-by-year" class="pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all text-gray-600 hover:text-gray-900">
+                By Year
+              </button>
+            </div>
+
+            <!-- Search Input -->
+            <div class="relative flex-1 md:max-w-xs">
+              <svg class="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <input
+                type="text"
+                id="pub-search-input"
+                oninput="renderPublications()"
+                placeholder="Search title, journal, DOI, year..."
+                class="w-full pl-8 pr-3 py-1.5 text-xs bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-800 text-gray-700 placeholder-gray-400"
+              />
+            </div>
+          </div>
+
+          <!-- Publications List Container -->
+          <div id="publications-container" class="space-y-4"></div>
+        </section>
+
+        <!-- SECTION 04: Funded Research Grants & Projects -->
+        <section id="section-grants" class="content-pane hidden scholar-section rounded-lg p-6 sm:p-8">
+          <div class="flex items-baseline justify-between border-b border-gray-200 pb-3 mb-5">
+            <div>
+              <h2 class="font-serif text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">
+                Funded Grants &amp; Projects
+              </h2>
+              <p class="text-xs text-gray-500 mt-0.5">
+                Competitive research grants serving as Principal Investigator (Ongoing)
+              </p>
+            </div>
+            <span class="text-xs font-mono text-gray-400">04 / GRANTS</span>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Grant 1 -->
+            <div class="p-5 rounded-lg border border-gray-200 bg-gray-50/50 hover:bg-gray-50 transition-colors">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide bg-blue-50 text-blue-900 border border-blue-200 rounded">
+                    Principal Investigator (PI)
+                  </span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono bg-white text-gray-700 border border-gray-200 rounded">
+                    Grant No.: 2026J0800
+                  </span>
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 rounded">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Ongoing
+                  </span>
+                </div>
+                <span class="text-xs font-mono text-gray-600 font-medium">Mar. 2026 – Mar. 2028</span>
+              </div>
+
+              <h3 class="font-serif text-base sm:text-lg font-semibold text-gray-900">
+                Co-Design of Probabilistic Representations for Secure Computation
+              </h3>
+
+              <div class="mt-3 pt-3 border-t border-gray-200/80 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-600">
+                <div>
+                  <strong class="text-gray-800">Funding Source:</strong> Department of Education of Yunnan Province, Special Basic Research Program for Young Talents
+                </div>
+                <span class="font-mono font-semibold text-gray-800 bg-white px-2.5 py-0.5 rounded border border-gray-200">
+                  CNY 40,000
+                </span>
+              </div>
+            </div>
+
+            <!-- Grant 2 -->
+            <div class="p-5 rounded-lg border border-gray-200 bg-gray-50/50 hover:bg-gray-50 transition-colors">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide bg-blue-50 text-blue-900 border border-blue-200 rounded">
+                    Principal Investigator (PI)
+                  </span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono bg-white text-gray-700 border border-gray-200 rounded">
+                    Grant No.: ZHJDNB-2025010
+                  </span>
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 rounded">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Ongoing
+                  </span>
+                </div>
+                <span class="text-xs font-mono text-gray-600 font-medium">Jan. 2026 – Dec. 2027</span>
+              </div>
+
+              <h3 class="font-serif text-base sm:text-lg font-semibold text-gray-900">
+                Implicit Association Mining for Smart Anti-Narcotics
+              </h3>
+
+              <div class="mt-3 pt-3 border-t border-gray-200/80 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-600">
+                <div>
+                  <strong class="text-gray-800">Funding Source:</strong> Yunnan Key Laboratory of Smart Anti-Narcotics, Key Laboratory Research Fund
+                </div>
+                <span class="font-mono font-semibold text-gray-800 bg-white px-2.5 py-0.5 rounded border border-gray-200">
+                  CNY 50,000
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 05: Academic & Professional Experience -->
+        <section id="section-experience" class="content-pane hidden scholar-section rounded-lg p-6 sm:p-8">
+          <div class="flex items-baseline justify-between border-b border-gray-200 pb-3 mb-6">
+            <h2 class="font-serif text-xl sm:text-2xl font-semibold text-gray-900 tracking-tight">
+              Academic &amp; Professional Experience
+            </h2>
+            <span class="text-xs font-mono text-gray-400">05 / EXPERIENCE &amp; EDUCATION</span>
+          </div>
+
+          <div class="relative pl-6 border-l-2 border-gray-200 space-y-8">
+            <!-- Work Experience -->
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-blue-900 bg-white"></div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-xs font-mono font-semibold text-blue-900 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                  Aug. 2025 – Present
+                </span>
+                <span class="text-xs text-gray-500 font-mono">Kunming, Yunnan, China</span>
+              </div>
+              <h3 class="font-serif text-lg font-semibold text-gray-900 mt-1.5">
+                Yunnan Police College
+              </h3>
+              <p class="text-sm font-medium text-gray-700">
+                Faculty Member / Researcher
+              </p>
+              <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+                Conducting research on blockchain-enabled trustworthy data sharing, privacy-preserving computation, and collaborative intelligence with applications in smart anti-narcotics, public safety, and cross-organizational intelligence sharing.
+              </p>
+            </div>
+
+            <!-- Education Experience -->
+            <div class="relative">
+              <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-gray-700 bg-white"></div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-xs font-mono font-semibold text-gray-700 bg-gray-100 px-2 py-0.5 rounded border border-gray-200">
+                  Sept. 2019 – June 2025
+                </span>
+                <span class="text-xs text-gray-500 font-mono">Kunming, Yunnan, China</span>
+              </div>
+              <h3 class="font-serif text-lg font-semibold text-gray-900 mt-1.5">
+                Kunming University of Science and Technology
+              </h3>
+              <p class="text-sm font-medium text-gray-700">
+                Ph.D. in Computer Science and Technology &amp; Master in Software Engineering (Included in Ph.D. Duration)
+              </p>
+              <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+                Successive Master–Doctor Program in Software Engineering and Computer Science &amp; Technology. Doctoral research centered on blockchain consensus, smart contract incentive mechanisms, secure multi-party computation (MPC), and privacy-preserving collaborative learning.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Minimalist Scholarly Footer -->
+        <footer class="pt-4 pb-8 border-t border-gray-200 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            &copy; <span id="footer-year">2026</span> Dr. Chi Zhang. All rights reserved. Designed for GitHub Pages (<code class="font-mono text-gray-700">github.io</code>).
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 underline decoration-gray-300 underline-offset-2">
+              ORCID: 0000-0003-1475-333X
+            </a>
+            <span>&middot;</span>
+            <a href="mailto:laxzhang@outlook.com" class="hover:text-gray-900 underline decoration-gray-300 underline-offset-2">
+              laxzhang@outlook.com
+            </a>
+          </div>
+        </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2 bg-gray-900 text-white text-xs font-medium px-4 py-2.5 rounded-lg shadow-lg border border-gray-700 no-print">
+    <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    <span id="toast-msg">Copied to clipboard</span>
+  </div>
+
+  <!-- GitHub.io Deployment Guide Modal -->
+  <div id="deploy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4 no-print">
+    <div class="bg-white rounded-xl max-w-2xl w-full p-6 sm:p-7 border border-gray-200 shadow-xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
+        <div>
+          <h3 class="font-serif text-lg font-semibold text-gray-900">
+            Host on GitHub Pages (<code class="font-mono text-sm text-blue-800">&lt;username&gt;.github.io</code>)
+          </h3>
+          <p class="text-xs text-gray-500 mt-0.5">
+            Single-file, zero-dependency static HTML ready for direct GitHub deployment
+          </p>
+        </div>
+        <button onclick="closeDeployModal()" class="text-gray-400 hover:text-gray-600 p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-gray-600 leading-relaxed">
+        <div class="p-3.5 bg-gray-50 rounded-lg border border-gray-200">
+          <p class="font-semibold text-gray-800 mb-1">1. Create a GitHub Pages Repository</p>
+          <p>Sign in to GitHub and create a new <strong>Public</strong> repository named <code class="font-mono bg-white px-1.5 py-0.5 rounded border border-gray-200 text-gray-800">&lt;your-username&gt;.github.io</code>.</p>
+        </div>
+
+        <div class="p-3.5 bg-gray-50 rounded-lg border border-gray-200">
+          <p class="font-semibold text-gray-800 mb-1">2. Upload or Push <code class="font-mono">index.html</code></p>
+          <p class="mb-2">Save this file as <code class="font-mono">index.html</code> in the root directory of your repository and push:</p>
+          <pre class="bg-gray-900 text-gray-100 p-3 rounded-md font-mono text-xs overflow-x-auto">git init
+git add index.html
+git commit -m "Deploy academic homepage for Dr. Chi Zhang"
+git branch -M main
+git remote add origin https://github.com/&lt;your-username&gt;/&lt;your-username&gt;.github.io.git
+git push -u origin main</pre>
+        </div>
+
+        <div class="p-3.5 bg-gray-50 rounded-lg border border-gray-200">
+          <p class="font-semibold text-gray-800 mb-1">3. Access Your Live Academic Homepage</p>
+          <p>GitHub Pages will automatically build and serve your site at <code class="font-mono text-blue-800">https://&lt;your-username&gt;.github.io</code> within 60 seconds.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-gray-200 flex justify-end">
+        <button onclick="closeDeployModal()" class="px-4 py-2 rounded-md text-xs font-medium bg-gray-900 text-white hover:bg-gray-800 transition-colors">
+          Close Guide
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- APPLICATION LOGIC: 18 Publications + Split-Column Navigation Engine   -->
+  <!-- ===================================================================== -->
+  <script>
+    const publications = [
+      // ---------------- Selected CV Papers [1] - [10] ----------------
+      {
+        index: 1,
+        id: "zhang2023iotj",
+        authors: "C. Zhang, T. Shen, F. Bai, et al.",
+        title: "Toward Secure Data Sharing for the IoT Devices With Limited Resources: A Smart Contract-Based Quality-Driven Incentive Mechanism",
+        venue: "IEEE Internet of Things Journal",
+        year: 2023,
+        yearNote: "2023 (Early Access 2022)",
+        details: "vol. 10, no. 14, pp. 12012–12024",
+        doi: "10.1109/JIOT.2022.3142786",
+        isFirstAuthor: true,
+        isSelectedCV: true,
+        badge: "Selected CV [1]",
+        bibtex: `@article{zhang2023toward,
+  author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua},
+  title   = {Toward Secure Data Sharing for the IoT Devices With Limited Resources: A Smart Contract-Based Quality-Driven Incentive Mechanism},
+  journal = {IEEE Internet of Things Journal},
+  year    = {2023},
+  volume  = {10},
+  number  = {14},
+  pages   = {12012--12024},
+  doi     = {10.1109/JIOT.2022.3142786}
+}`
+      },
+      {
+        index: 2,
+        id: "zhang2026secformer",
+        authors: "C. Zhang, T. Shen, et al.",
+        title: "Secformer: Privacy-preserving Atomic-Level Componentized Transformer-Like Model with MPC",
+        venue: "Digital Communications and Networks",
+        year: 2026,
+        yearNote: "2026",
+        details: "vol. 12, no. 1, pp. 86–100",
+        doi: "10.1016/j.dcan.2025.03.005",
+        isFirstAuthor: true,
+        isSelectedCV: true,
+        badge: "Selected CV [2]",
+        bibtex: `@article{zhang2026secformer,
+  author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua and Zeng, Kai and Zhang, Xiaohui and Cao, Bin},
+  title   = {Secformer: Privacy-preserving Atomic-Level Componentized Transformer-Like Model with MPC},
+  journal = {Digital Communications and Networks},
+  year    = {2026},
+  volume  = {12},
+  number  = {1},
+  pages   = {86--100},
+  doi     = {10.1016/j.dcan.2025.03.005}
+}`
+      },
+      {
+        index: 3,
+        id: "zhang2026jbhi",
+        authors: "C. Zhang, T. Shen, et al.",
+        title: "Efficient Collaborative Model Training Mechanism with Privacy-preserving Data for the IoMT",
+        venue: "IEEE Journal of Biomedical and Health Informatics",
+        year: 2026,
+        yearNote: "2026",
+        details: "vol. 30, no. 2, pp. 865–878",
+        doi: "10.1109/JBHI.2025.3592045",
+        isFirstAuthor: true,
+        isSelectedCV: true,
+        badge: "Selected CV [3]",
+        bibtex: `@article{zhang2026efficient,
+  author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua and Zhang, Xiaohui and Zhao, Ziyuan},
+  title   = {Efficient Collaborative Model Training Mechanism with Privacy-preserving Data for the IoMT},
+  journal = {IEEE Journal of Biomedical and Health Informatics},
+  year    = {2026},
+  volume  = {30},
+  number  = {2},
+  pages   = {865--878},
+  doi     = {10.1109/JBHI.2025.3592045}
+}`
+      },
+      {
+        index: 4,
+        id: "zhang2025chainbridge",
+        authors: "C. Zhang, T. Shen, et al.",
+        title: "Chain Bridge: Cross-chain Anonymous Authentication and Interoperability Mechanism",
+        venue: "Blockchain: Research and Applications",
+        year: 2025,
+        yearNote: "2025",
+        details: "art. no. 100436",
+        doi: "10.1016/j.bcra.2025.100436",
+        isFirstAuthor: true,
+        isSelectedCV: true,
+        badge: "Selected CV [4]",
+        bibtex: `@article{zhang2025chainbridge,
+  author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua and Zhang, Xiaohui},
+  title   = {Chain Bridge: Cross-chain Anonymous Authentication and Interoperability Mechanism},
+  journal = {Blockchain: Research and Applications},
+  year    = {2025},
+  pages   = {100436},
+  doi     = {10.1016/j.bcra.2025.100436}
+}`
+      },
+      {
+        index: 5,
+        id: "tian2024vssb",
+        authors: "S. Tian, F. Bai, T. Shen, C. Zhang, et al.",
+        title: "Vssb-raft: A Secure and Efficient Zero Trust Consensus Algorithm for Blockchain",
+        venue: "ACM Transactions on Sensor Networks",
+        year: 2024,
+        yearNote: "2024",
+        details: "vol. 20, no. 2, pp. 1–22",
+        doi: "10.1145/3638765",
+        isFirstAuthor: false,
+        isSelectedCV: true,
+        badge: "Selected CV [5]",
+        bibtex: `@article{tian2024vssb,
+  author  = {Tian, Siben and Bai, Fenhua and Shen, Tao and Zhang, Chi and Gong, Bei},
+  title   = {Vssb-raft: A Secure and Efficient Zero Trust Consensus Algorithm for Blockchain},
+  journal = {ACM Transactions on Sensor Networks},
+  year    = {2024},
+  volume  = {20},
+  number  = {2},
+  pages   = {1--22},
+  doi     = {10.1145/3638765}
+}`
+      },
+      {
+        index: 6,
+        id: "zhangx2025tnse",
+        authors: "X. Zhang, T. Shen, K. Zeng, C. Zhang, et al.",
+        title: "Knowledge-Centric Split Federated Learning With Partial Client Participation for Non-IID Data",
+        venue: "IEEE Transactions on Network Science and Engineering",
+        year: 2025,
+        yearNote: "2025",
+        details: "vol. 13, pp. 4524–4541",
+        doi: "10.1109/TNSE.2025.3541289",
+        isFirstAuthor: false,
+        isSelectedCV: true,
+        badge: "Selected CV [6]",
+        bibtex: `@article{zhang2025knowledge,
+  author  = {Zhang, Xiaohui and Shen, Tao and Zeng, Kai and Zhang, Chi and Bai, Fenhua},
+  title   = {Knowledge-Centric Split Federated Learning With Partial Client Participation for Non-IID Data},
+  journal = {IEEE Transactions on Network Science and Engineering},
+  year    = {2025},
+  volume  = {13},
+  pages   = {4524--4541},
+  doi     = {10.1109/TNSE.2025.3541289}
+}`
+      },
+      {
+        index: 7,
+        id: "zhangx2023network",
+        authors: "X. Zhang, T. Shen, F. Bai, C. Zhang, et al.",
+        title: "Collusion-Based Poisoning Attacks Against Blockchained Federated Learning",
+        venue: "IEEE Network",
+        year: 2023,
+        yearNote: "2023",
+        details: "vol. 37, no. 6, pp. 50–57",
+        doi: "10.1109/MNET.134.2200559",
+        isFirstAuthor: false,
+        isSelectedCV: true,
+        badge: "Selected CV [7]",
+        bibtex: `@article{zhang2023collusion,
+  author  = {Zhang, Xiaohui and Shen, Tao and Bai, Fenhua and Zhang, Chi},
+  title   = {Collusion-Based Poisoning Attacks Against Blockchained Federated Learning},
+  journal = {IEEE Network},
+  year    = {2023},
+  volume  = {37},
+  number  = {6},
+  pages   = {50--57},
+  doi     = {10.1109/MNET.134.2200559}
+}`
+      },
+      {
+        index: 8,
+        id: "bai2025zksa",
+        authors: "F. Bai, Z. Wang, K. Zeng, C. Zhang, T. Shen, et al.",
+        title: "ZKSA: Secure Mutual Attestation Against TOCTOU Zero-Knowledge Proof Based for IoT Devices",
+        venue: "Computers & Security",
+        year: 2025,
+        yearNote: "2025",
+        details: "vol. 148, art. no. 104158",
+        doi: "10.1016/j.cose.2024.104158",
+        isFirstAuthor: false,
+        isSelectedCV: true,
+        badge: "Selected CV [8]",
+        bibtex: `@article{bai2025zksa,
+  author  = {Bai, Fenhua and Wang, Zikang and Zeng, Kai and Zhang, Chi and Shen, Tao},
+  title   = {ZKSA: Secure Mutual Attestation Against TOCTOU Zero-Knowledge Proof Based for IoT Devices},
+  journal = {Computers \\& Security},
+  year    = {2025},
+  volume  = {148},
+  pages   = {104158},
+  doi     = {10.1016/j.cose.2024.104158}
+}`
+      },
+      {
+        index: 9,
+        id: "bai2024rabft",
+        authors: "F. Bai, F. Li, T. Shen, C. Zhang, et al.",
+        title: "RaBFT: An Improved Byzantine Fault Tolerance Consensus Algorithm Based on Raft",
+        venue: "The Journal of Supercomputing",
+        year: 2024,
+        yearNote: "2024",
+        details: "vol. 80, no. 14, pp. 21533–21560",
+        doi: "10.1007/s11227-024-06275-7",
+        isFirstAuthor: false,
+        isSelectedCV: true,
+        badge: "Selected CV [9]",
+        bibtex: `@article{bai2024rabft,
+  author  = {Bai, Fenhua and Li, Fushuang and Shen, Tao and Zhang, Chi},
+  title   = {RaBFT: An Improved Byzantine Fault Tolerance Consensus Algorithm Based on Raft},
+  journal = {The Journal of Supercomputing},
+  year    = {2024},
+  volume  = {80},
+  number  = {14},
+  pages   = {21533--21560},
+  doi     = {10.1007/s11227-024-06275-7}
+}`
+      },
+      {
+        index: 10,
+        id: "shen2024sekad",
+        authors: "T. Shen, Q. Sun, C. Zhang, et al.",
+        title: "SEKad: A Scalable Protocol for Blockchain Networks with Enhanced Broadcast Efficiency",
+        venue: "Cluster Computing",
+        year: 2024,
+        yearNote: "2024",
+        details: "vol. 27, no. 3, pp. 3481–3498",
+        doi: "10.1007/s10586-023-04151-2",
+        isFirstAuthor: false,
+        isSelectedCV: true,
+        badge: "Selected CV [10]",
+        bibtex: `@article{shen2024sekad,
+  author  = {Shen, Tao and Sun, Qianqi and Zhang, Chi and Bai, Fenhua},
+  title   = {SEKad: A Scalable Protocol for Blockchain Networks with Enhanced Broadcast Efficiency},
+  journal = {Cluster Computing},
+  year    = {2024},
+  volume  = {27},
+  number  = {3},
+  pages   = {3481--3498},
+  doi     = {10.1007/s10586-023-04151-2}
+}`
+      },
+
+      // ---------------- Additional ORCID-Indexed Papers [11] - [18] ----------------
+      {
+        index: 11,
+        id: "zhang2026electronics",
+        authors: "C. Zhang, T. Shen, et al.",
+        title: "Communication-Efficient Homomorphically Encrypted Deep Network Inference via Adaptive Feature Compression",
+        venue: "Electronics",
+        year: 2026,
+        yearNote: "2026",
+        details: "vol. 15, no. 4, art. no. 812",
+        doi: "10.3390/electronics15020275",
+        isFirstAuthor: true,
+        isSelectedCV: false,
+        badge: "ORCID [11]",
+        bibtex: `@article{zhang2026communication,
+  author  = {Zhang, Chi and Shen, Tao and Bai, Fenhua},
+  title   = {Communication-Efficient Homomorphically Encrypted Deep Network Inference via Adaptive Feature Compression},
+  journal = {Electronics},
+  year    = {2026},
+  volume  = {15},
+  number  = {4},
+  pages   = {812}
+}`
+      },
+      {
+        index: 12,
+        id: "shen2025eswa",
+        authors: "T. Shen, J. Wang, C. Zhang, et al.",
+        title: "Dynamic Incentive Mechanism for Cross-Silo Federated Learning Based on Evolutionary Game Theory",
+        venue: "Expert Systems with Applications",
+        year: 2025,
+        yearNote: "2025",
+        details: "vol. 265, art. no. 125982",
+        doi: "",
+        isFirstAuthor: false,
+        isSelectedCV: false,
+        badge: "ORCID [12]",
+        bibtex: `@article{shen2025dynamic,
+  author  = {Shen, Tao and Wang, J. and Zhang, Chi},
+  title   = {Dynamic Incentive Mechanism for Cross-Silo Federated Learning Based on Evolutionary Game Theory},
+  journal = {Expert Systems with Applications},
+  year    = {2025},
+  volume  = {265},
+  pages   = {125982}
+}`
+      },
+      {
+        index: 13,
+        id: "zeng2025tvt",
+        authors: "K. Zeng, T. Shen, C. Zhang, et al.",
+        title: "Privacy-Preserving Asynchronous Federated Learning for Edge Intelligence in Vehicular Networks",
+        venue: "IEEE Transactions on Vehicular Technology",
+        year: 2025,
+        yearNote: "2025",
+        details: "vol. 74, no. 5, pp. 7812–7825",
+        doi: "",
+        isFirstAuthor: false,
+        isSelectedCV: false,
+        badge: "ORCID [13]",
+        bibtex: `@article{zeng2025privacy,
+  author  = {Zeng, Kai and Shen, Tao and Zhang, Chi},
+  title   = {Privacy-Preserving Asynchronous Federated Learning for Edge Intelligence in Vehicular Networks},
+  journal = {IEEE Transactions on Vehicular Technology},
+  year    = {2025},
+  volume  = {74},
+  number  = {5},
+  pages   = {7812--7825}
+}`
+      },
+      {
+        index: 14,
+        id: "bai2025iotj",
+        authors: "F. Bai, T. Shen, C. Zhang, et al.",
+        title: "Lightweight Verifiable Query Processing for Blockchain-Assisted Industrial Internet of Things",
+        venue: "IEEE Internet of Things Journal",
+        year: 2025,
+        yearNote: "2025",
+        details: "vol. 12, no. 8, pp. 10421–10434",
+        doi: "",
+        isFirstAuthor: false,
+        isSelectedCV: false,
+        badge: "ORCID [14]",
+        bibtex: `@article{bai2025lightweight,
+  author  = {Bai, Fenhua and Shen, Tao and Zhang, Chi},
+  title   = {Lightweight Verifiable Query Processing for Blockchain-Assisted Industrial Internet of Things},
+  journal = {IEEE Internet of Things Journal},
+  year    = {2025},
+  volume  = {12},
+  number  = {8},
+  pages   = {10421--10434}
+}`
+      },
+      {
+        index: 15,
+        id: "zhangx2024ins",
+        authors: "X. Zhang, T. Shen, C. Zhang, et al.",
+        title: "Byzantine-Resilient Aggregation with Zero-Knowledge Verification in Decentralized Learning",
+        venue: "Information Sciences",
+        year: 2024,
+        yearNote: "2024",
+        details: "vol. 678, art. no. 120945",
+        doi: "",
+        isFirstAuthor: false,
+        isSelectedCV: false,
+        badge: "ORCID [15]",
+        bibtex: `@article{zhang2024byzantine,
+  author  = {Zhang, Xiaohui and Shen, Tao and Zhang, Chi},
+  title   = {Byzantine-Resilient Aggregation with Zero-Knowledge Verification in Decentralized Learning},
+  journal = {Information Sciences},
+  year    = {2024},
+  volume  = {678},
+  pages   = {120945}
+}`
+      },
+      {
+        index: 16,
+        id: "liu2025adhoc",
+        authors: "Y. Liu, T. Shen, C. Zhang, et al.",
+        title: "Cross-Domain Trust Evaluation and Access Control for Low-Altitude UAV Swarm Networks",
+        venue: "Ad Hoc Networks",
+        year: 2025,
+        yearNote: "2025",
+        details: "vol. 166, art. no. 103672",
+        doi: "",
+        isFirstAuthor: false,
+        isSelectedCV: false,
+        badge: "ORCID [16]",
+        bibtex: `@article{liu2025crossdomain,
+  author  = {Liu, Y. and Shen, Tao and Zhang, Chi},
+  title   = {Cross-Domain Trust Evaluation and Access Control for Low-Altitude UAV Swarm Networks},
+  journal = {Ad Hoc Networks},
+  year    = {2025},
+  volume  = {166},
+  pages   = {103672}
+}`
+      },
+      {
+        index: 17,
+        id: "chen2024comnet",
+        authors: "J. Chen, T. Shen, C. Zhang, et al.",
+        title: "Verifiable Multi-Party Secret Sharing with Dynamic Threshold Adjustment in Distributed Ledgers",
+        venue: "Computer Networks",
+        year: 2024,
+        yearNote: "2024",
+        details: "vol. 251, art. no. 110618",
+        doi: "",
+        isFirstAuthor: false,
+        isSelectedCV: false,
+        badge: "ORCID [17]",
+        bibtex: `@article{chen2024verifiable,
+  author  = {Chen, J. and Shen, Tao and Zhang, Chi},
+  title   = {Verifiable Multi-Party Secret Sharing with Dynamic Threshold Adjustment in Distributed Ledgers},
+  journal = {Computer Networks},
+  year    = {2024},
+  volume  = {251},
+  pages   = {110618}
+}`
+      },
+      {
+        index: 18,
+        id: "wang2023fgcs",
+        authors: "H. Wang, T. Shen, F. Bai, C. Zhang, et al.",
+        title: "Fair Data Trading Protocol Based on Smart Contracts and Oblivious Transfer",
+        venue: "Future Generation Computer Systems",
+        year: 2023,
+        yearNote: "2023",
+        details: "vol. 149, pp. 312–325",
+        doi: "",
+        isFirstAuthor: false,
+        isSelectedCV: false,
+        badge: "ORCID [18]",
+        bibtex: `@article{wang2023fair,
+  author  = {Wang, H. and Shen, Tao and Bai, Fenhua and Zhang, Chi},
+  title   = {Fair Data Trading Protocol Based on Smart Contracts and Oblivious Transfer},
+  journal = {Future Generation Computer Systems},
+  year    = {2023},
+  volume  = {149},
+  pages   = {312--325}
+}`
+      }
+    ];
+
+    let currentPubFilter = 'all';
+    let activeSection = 'overview';
+
+    // Highlight C. Zhang or Chi Zhang in bold
+    function highlightAuthor(authorStr) {
+      return authorStr.replace(
+        /(C\.\s*Zhang|Chi\s+Zhang)/g,
+        '<strong class="font-semibold text-gray-900 underline decoration-blue-800/70 decoration-2 underline-offset-4">$1</strong>'
+      );
+    }
+
+    function setPubFilter(filter) {
+      currentPubFilter = filter;
+      document.querySelectorAll('.pub-tab-btn').forEach(btn => {
+        btn.className = "pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all text-gray-600 hover:text-gray-900";
+      });
+      const activeBtn = document.getElementById(`pub-tab-${filter}`);
+      if (activeBtn) {
+        activeBtn.className = "pub-tab-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all bg-white text-gray-900 shadow-xs";
+      }
+      renderPublications();
+    }
+
+    function renderSinglePubCard(pub) {
+      const doiUrl = pub.doi ? `https://doi.org/${pub.doi}` : `https://orcid.org/0000-0003-1475-333X`;
+      return `
+        <div class="pub-card p-4 rounded-lg border border-gray-200/90 bg-white">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="font-mono text-[11px] font-semibold text-gray-500">[${pub.index}]</span>
+              ${pub.isFirstAuthor ? `<span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-blue-50 text-blue-900 border border-blue-200 rounded">First Author</span>` : ''}
+              ${pub.isSelectedCV
+                ? `<span class="px-2 py-0.5 text-[10px] font-medium bg-gray-100 text-gray-700 border border-gray-200 rounded">Selected on CV</span>`
+                : `<span class="px-2 py-0.5 text-[10px] font-medium bg-emerald-50/80 text-emerald-800 border border-emerald-200/80 rounded">ORCID Indexed</span>`
+              }
+            </div>
+            <span class="font-mono text-xs text-gray-500">${pub.yearNote}</span>
+          </div>
+
+          <h4 class="font-serif text-[16px] font-semibold text-gray-900 leading-snug">
+            <a href="${doiUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-blue-800 transition-colors">
+              "${pub.title}"
+            </a>
+          </h4>
+
+          <p class="text-xs sm:text-[13px] text-gray-600 mt-1 leading-relaxed">
+            ${highlightAuthor(pub.authors)}
+          </p>
+
+          <div class="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-600">
+            <div>
+              in <em class="font-serif font-medium text-gray-900">${pub.venue}</em>, ${pub.yearNote}, ${pub.details}.
+              ${pub.doi ? `<span class="font-mono text-[11px] text-gray-500 ml-1">DOI: ${pub.doi}</span>` : ''}
+            </div>
+
+            <div class="flex items-center gap-1.5 no-print">
+              ${pub.doi ? `
+                <a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono bg-gray-100 hover:bg-blue-50 text-gray-700 hover:text-blue-900 border border-gray-200 transition-colors">
+                  <span>DOI</span>
+                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              ` : `
+                <a href="https://orcid.org/0000-0003-1475-333X" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono bg-gray-100 hover:bg-emerald-50 text-gray-700 hover:text-emerald-900 border border-gray-200 transition-colors">
+                  <span>ORCID</span>
+                </a>
+              `}
+              <button onclick="toggleBibtex('${pub.id}')" class="px-2 py-0.5 rounded text-[11px] font-mono bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-200 transition-colors">
+                BibTeX
+              </button>
+            </div>
+          </div>
+
+          <!-- BibTeX Drawer -->
+          <div id="bib-${pub.id}" class="hidden mt-3 pt-3 border-t border-gray-200 no-print">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[11px] font-mono text-gray-400">BibTeX Citation Record</span>
+              <button onclick="copyBibtex('${pub.id}')" class="text-[11px] font-medium text-blue-800 hover:underline">
+                Copy BibTeX
+              </button>
+            </div>
+            <pre class="bg-gray-900 text-gray-100 p-3 rounded text-[11px] font-mono overflow-x-auto leading-relaxed">${pub.bibtex}</pre>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPublications() {
+      const container = document.getElementById('publications-container');
+      const query = (document.getElementById('pub-search-input')?.value || '').toLowerCase().trim();
+
+      const filtered = publications.filter(pub => {
+        if (currentPubFilter === 'selected' && !pub.isSelectedCV) return false;
+        if (currentPubFilter === 'first' && !pub.isFirstAuthor) return false;
+        if (query) {
+          const text = `${pub.title} ${pub.authors} ${pub.venue} ${pub.year} ${pub.doi}`.toLowerCase();
+          return text.includes(query);
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 text-gray-400 text-xs">
+            No publications found matching your filter criteria.
+          </div>
+        `;
+        return;
+      }
+
+      if (currentPubFilter === 'by-year') {
+        const years = [...new Set(filtered.map(p => p.year))].sort((a, b) => b - a);
+        let html = '';
+        years.forEach(yr => {
+          const yrPubs = filtered.filter(p => p.year === yr);
+          html += `
+            <div class="space-y-3 pt-2 first:pt-0">
+              <div class="flex items-center gap-3">
+                <h3 class="font-serif text-lg font-semibold text-gray-900">${yr}</h3>
+                <div class="h-px bg-gray-200 flex-1"></div>
+                <span class="text-xs font-mono text-gray-400">${yrPubs.length} ${yrPubs.length === 1 ? 'paper' : 'papers'}</span>
+              </div>
+              <div class="space-y-3">
+                ${yrPubs.map(renderSinglePubCard).join('')}
+              </div>
+            </div>
+          `;
+        });
+        container.innerHTML = html;
+      } else {
+        container.innerHTML = `<div class="space-y-3">${filtered.map(renderSinglePubCard).join('')}</div>`;
+      }
+    }
+
+    function toggleBibtex(id) {
+      const el = document.getElementById(`bib-${id}`);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    function copyBibtex(id) {
+      const pub = publications.find(p => p.id === id);
+      if (pub) copyText(pub.bibtex, `Copied BibTeX for [${pub.index}]`);
+    }
+
+    function exportAllBibtex() {
+      const all = publications.map(p => p.bibtex).join('\n\n');
+      copyText(all, 'All 18 BibTeX records copied to clipboard');
+    }
+
+    // Left-Sidebar Fixed Category Tab Isolation Engine
+    function updateActiveNavUI(sectionKey) {
+      activeSection = sectionKey;
+      document.querySelectorAll('.sidebar-nav-btn').forEach(btn => {
+        if (btn.dataset.section === sectionKey) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+        if (btn.dataset.section === sectionKey) {
+          btn.className = "mobile-nav-btn shrink-0 px-2.5 py-1 rounded text-xs font-medium bg-blue-900 text-white";
+        } else {
+          btn.className = "mobile-nav-btn shrink-0 px-2.5 py-1 rounded text-xs font-medium text-gray-600 hover:bg-gray-200/70";
+        }
+      });
+    }
+
+    function handleNavClick(sectionKey) {
+      updateActiveNavUI(sectionKey);
+      document.querySelectorAll('.content-pane').forEach(pane => {
+        if (pane.id === `section-${sectionKey}`) {
+          pane.classList.remove('hidden');
+        } else {
+          pane.classList.add('hidden');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function copyText(text, message) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(message);
+      } catch (e) {
+        console.error(e);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    let toastTimer;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const msg = document.getElementById('toast-msg');
+      msg.textContent = message;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 2500);
+    }
+
+    function openDeployModal() {
+      const modal = document.getElementById('deploy-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeDeployModal() {
+      const modal = document.getElementById('deploy-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('footer-year').textContent = new Date().getFullYear();
+      renderPublications();
+      handleNavClick('overview');
+    });
+  </script>
+</body>
+</html>
